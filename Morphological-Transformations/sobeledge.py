@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw
 from math import sqrt
 
 # Load image:
-input_image = Image.open("morphological.png")
+input_image = Image.open("dilation_output.png")
 input_pixels = input_image.load()
 
 # Calculate pixel intensity as the average of red, green and blue colors.
