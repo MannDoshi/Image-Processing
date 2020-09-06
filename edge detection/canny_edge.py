@@ -35,7 +35,7 @@ def gaussian_blur(input_image):
     return output_image
 def sobel_edge(input_image):
     # Calculate pixel intensity as the average of red, green and blue colors.
-    intensity = [[sum(input_image[x, y]) / 3 for y in range(input_image.shape[0])] for x in range(input_image.shape[1])]
+    intensity = [[sum(input_image[x, y]) / 3 for y in range(input_image.shape[1])] for x in range(input_image.shape[0])]
 
     # Sobel kernels
     kernelx = [[-1, 0, 1],
@@ -51,8 +51,8 @@ def sobel_edge(input_image):
     outputx.fill(0)
     outputy.fill(0)
     # Compute convolution between intensity and kernels
-    for x in range(1, input_image.shape[1] - 1):
-        for y in range(1, input_image.shape[0] - 1):
+    for x in range(1, input_image.shape[0] - 1):
+        for y in range(1, input_image.shape[1] - 1):
             for a in range(3):
                 for b in range(3):
                     xn = x + a - 1
@@ -137,7 +137,7 @@ def hysteresis(img, weak, strong=255):
                 except IndexError as e:
                     pass
     return img
-input_image = Image.open("edge-detection2.jpg")
+input_image = Image.open("edge-detection.png")
 input_pixels = np.array(input_image)
 sobel_output=sobel_edge(gaussian_blur(input_pixels))
 non_max=non_max_suppression(sobel_output[0],sobel_output[1])

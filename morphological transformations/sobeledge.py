@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw
 from math import sqrt
 
 # Load image:
-input_image = Image.open("edge-detection.png")
+input_image = Image.open("morphological.png")
 input_pixels = input_image.load()
 
 # Calculate pixel intensity as the average of red, green and blue colors.
@@ -29,10 +29,10 @@ for x in range(1, input_image.width - 1):
                 xn = x + a - 1
                 yn = y + b - 1
                 magx += intensity[xn][yn] * kernelx[a][b]
-                
+                magy += intensity[xn][yn] * kernely[a][b]
 
         # Draw in black and white the magnitude
-        color = int(magx)
+        color = int(sqrt(magx**2 + magy**2))
         draw.point((x, y), (color, color, color))
     
-output_image.save("horizontal-edge-output.png")
+output_image.save("sobel-edge-output.png")
