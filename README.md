@@ -4,7 +4,12 @@ The following operations have been performed mainly using only Numpy and Pillow 
 
 ### 1. Image Rotation
 
-The image can be rotated by any angle bound or inbound.
+The image can be rotated by any angle bound or inbound.It involves finding the centre of the Matrix and Shifting along the centre using Rotation Matrix.There are two methods of rotating the image following above approach
+1. Using Pure Rotation Matrix
+2. [Using Shearing Rotation](https://datagenetics.com/blog/august32013/index.html)
+
+![Rotation Matrix](https://legacy.voteview.com/images/homework_1_1_18_2011.jpg)
+
 |<img width="640" height="450" src="https://github.com/MannDoshi/Image-Processing/blob/master/Image-Rotation/image.png">| 
 |:---:|
 |Input Image|
@@ -15,6 +20,8 @@ The image can be rotated by any angle bound or inbound.
 |No Bound|Bound|
 
 ### 2. Applying Kernels
+Convolution is a simple mathematical operation which is fundamental to many common image processing operators. Convolution provides a way of multiplying together two arrays of numbers, generally of different sizes, but of the same dimensionality, to produce a third array of numbers of the same dimensionality.Kernels form the Second Matrix which provides effects to the Image.
+![figure3](https://user-images.githubusercontent.com/35737777/68632479-95c61f80-04e6-11ea-80b2-2e86a4fcc258.jpg)
 
 Applying 5X5 filters to do the following task
 1. Blurring 
@@ -30,6 +37,8 @@ Applying 5X5 filters to do the following task
 |Box Filter|Gaussian Filter|Sharpen|
 
 ### 3. Edge Detection
+Edge detection is an image processing technique for finding the boundaries of objects within images. It works by detecting discontinuities in brightness.
+
 Applying Edge Detection in following sequence 
 1. Vertical edge detection
 2. Horizontal edge detection
@@ -48,6 +57,7 @@ Applying Edge Detection in following sequence
 |Sobel Edge Detection|Canny Edge Detection|
 
 ### 4. Morphological Transformation
+Morphological transformations are some simple operations based on the image shape. It is normally performed on binary images. It needs two inputs, one is our original image, second one is called structuring element or kernel which decides the nature of operation. Two basic morphological operators are Erosion and Dilation.
 Applying dilation and erosion transformation to the image
 
 **Output**
